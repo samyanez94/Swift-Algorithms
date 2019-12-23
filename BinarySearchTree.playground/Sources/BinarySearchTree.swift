@@ -30,18 +30,18 @@ extension BinarySearchTree {
         return false
       }
     
-    /// Recursively inserts an element into the binarey search tree.
+    /// Recursively inserts an element into the binary search tree.
     ///
-    /// - Parameter value: The value of the element.
+    /// - Parameter value: The value of the element to insert.
     public mutating func insert(_ value: T) {
       root = insert(from: root, value: value)
     }
     
-    /// Recursively inserts an element into the binarey search tree.
+    /// Recursively inserts an element into the binary search tree.
     ///
     /// - Parameters:
     ///     - node: The current node to traverse.
-    ///     - value: The value to insert in the tree.
+    ///     - value: The value of the element to insert.
     ///
     /// - Returns: The current node.
     private func insert(from node: BinaryTreeNode<T>?, value: T) -> BinaryTreeNode<T> {
@@ -52,6 +52,42 @@ extension BinarySearchTree {
             
         } else {
             node.rightChild = insert(from: node.rightChild, value: value)
+        }
+        return node
+    }
+    
+    /// Recursively removes an element from the binary search tree.
+    ///
+    /// - Parameter value: The value of the element to remove.
+    public mutating func remove(_ value: T) {
+        root = remove(node: root, value: value)
+    }
+    
+    /// Recursively removes an element from the binary search tree.
+    ///
+    /// - Parameters:
+    ///     - node: The current node to traverse.
+    ///     - value: The value of the element to remove
+    ///
+    /// - Returns: The current node.
+    private func remove(node: BinaryTreeNode<T>?, value: T) -> BinaryTreeNode<T>? {
+        guard let node = node else { return nil }
+        if value == node.value {
+            if node.leftChild == nil && node.rightChild == nil {
+                return nil
+            }
+            if node.leftChild == nil {
+                return node.rightChild
+            }
+            guard let rightChild = node.rightChild else {
+                return node.leftChild
+            }
+            node.value = rightChild.min.value
+            node.rightChild = remove(node: rightChild, value: rightChild.value)
+        } else if value < node.value {
+            node.leftChild = remove(node: node.leftChild, value: value)
+        } else {
+            node.rightChild = remove(node: node.rightChild, value: value)
         }
         return node
     }

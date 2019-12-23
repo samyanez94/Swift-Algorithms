@@ -34,6 +34,11 @@ public class BinaryTreeNode<T> {
       return parent?.rightChild === self
     }
     
+    /// Computed property that returns the node with the minimum value is the tree
+    var min: BinaryTreeNode {
+        return leftChild?.min ?? self
+    }
+    
     /// Default public initializer.
     public init(_ value: T) {
         self.value = value
