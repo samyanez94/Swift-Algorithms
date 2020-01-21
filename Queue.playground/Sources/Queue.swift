@@ -33,7 +33,7 @@ public struct Queue<T> {
         array.append(element)
     }
     
-    /// Removes the element in the front of the queue if any..
+    /// Removes the element in the front of the queue if any.
     ///
     /// - Returns: The removed element.
     @discardableResult

@@ -1,6 +1,5 @@
-# Xcode
-#
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+## System
+.DS_Store
 
 ## User settings
 xcuserdata/
@@ -33,5 +32,4 @@ DerivedData/
 ## Playgrounds
 timeline.xctimeline
 playground.xcworkspace
-
 .build/
