@@ -6,7 +6,7 @@ queue.enqueue("Jade plant")
 queue.enqueue("Bamboo")
 queue.enqueue("Succulent")
 
-// Dequeue elements. (Elements should be in ascensing order given the order criteria.)
+// Dequeue elements. (Elements should be in ascensing order given the order criteria)
 while !queue.isEmpty {
     if let element = queue.dequeue() {
         print(element)

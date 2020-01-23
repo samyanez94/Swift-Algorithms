@@ -4,20 +4,20 @@ import Foundation
  A heap is a binary tree data structure that is sorted based on the "heap property" that determines the order of the nodes in the tree.
 */
 public struct Heap<T: Comparable> {
-    /// The array that stores the heap nodes.
-    var nodes = [T]()
+    /// Serves as a storage for the heap.
+    private var nodes = [T]()
     
     /// Determines how to compare two nodes in the heap.
     private let orderCriteria: (T, T) -> Bool
     
     /// Computed property that returns true is the heap is empty.
     public var isEmpty: Bool {
-        return nodes.isEmpty
+        nodes.isEmpty
     }
     
     /// Computed propery that returns the number of elements in the heap.
     public var count: Int {
-        return nodes.count
+        nodes.count
     }
     
     /// Public initializer.
@@ -45,49 +45,49 @@ public struct Heap<T: Comparable> {
     
     /// Returns the index of the parent of the element at index i.
     ///
-    /// - Parameter i: The index of the element.
-    ///
     /// - Complexity: O(1)
+    ///
+    /// - Parameter i: The index of the element.
     ///
     /// - Returns: The index of the parent of the element.
     internal func parentIndex(ofIndex i: Int) -> Int {
-        return (i - 1) / 2
+        (i - 1) / 2
     }
     
     /// Returns the index of the left child of the element at index i.
     ///
-    /// - Parameter i: The index of the element.
-    ///
     /// - Complexity: O(1)
+    ///
+    /// - Parameter i: The index of the element.
     ///
     /// - Returns: The index of the left child of the element.
     private func leftChildIndex(ofIndex i: Int) -> Int {
-        return (2 * i) + 1
+        (2 * i) + 1
     }
     
     /// Returns the index of the right child of the element at index i.
     ///
-    /// - Parameter i: The index of the element.
-    ///
     /// - Complexity: O(1)
+    ///
+    /// - Parameter i: The index of the element.
     ///
     /// - Returns: The index of the right child of the element.
     private func rightChildIndex(ofIndex i: Int) -> Int {
-        return (2 * i) + 2
+        (2 * i) + 2
     }
     
     /// Finds the index of the node in the heap if found.
     ///
-    /// - Parameter node: The node to search for.
-    ///
     /// - Complexity: O(n)
+    ///
+    /// - Parameter node: The node to search for.
     ///
     /// - Returns: The index of the node if found
     public func index(of node: T) -> Int? {
         nodes.firstIndex(where: { $0 == node })
     }
     
-    /// Adds a new value to the heap. This reorders the heap so that the max-heap or min-heap property still holds
+    /// Adds a new value to the heap. This reorders the heap so that the max-heap or min-heap property still holds.
     ///
     /// - Complexity: O(log n)
     ///
@@ -138,10 +138,9 @@ public struct Heap<T: Comparable> {
     
     /// Restores the "heap property" by swapping up values.
     ///
-    /// - Parameter index: The index of the element where the shift should start.
-    ///
     /// - Complexity: O(log n)
     ///
+    /// - Parameter index: The index of the element where the shift should start.
     private mutating func shiftUp(from index: Int) {
         var childIndex = index
         let child = nodes[childIndex]
@@ -164,12 +163,11 @@ public struct Heap<T: Comparable> {
     
     /// Restores the "heap property" by recursively swapping down values.
     ///
+    /// - Complexity: O(log n)
+    ///
     /// - Parameters:
     ///     - index: The index of the element where the shift should start.
     ///     - endIndex: The index of the element where the shift should end.
-    ///
-    /// - Complexity: O(log n)
-    ///
     private mutating func shiftDown(from index: Int, until endIndex: Int) {
         let leftChildIndex = self.leftChildIndex(ofIndex: index)
         let rightChildIndex = self.rightChildIndex(ofIndex: index)
