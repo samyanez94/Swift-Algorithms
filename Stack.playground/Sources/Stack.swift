@@ -37,7 +37,7 @@ public struct Stack<T> {
     
     /// Removes the element on the top of the stack.
     ///
-    /// - Complexity: O(n)
+    /// - Complexity: O(1)
     ///
     /// - Returns: The removed element.
     @discardableResult public mutating func pop() -> T? {

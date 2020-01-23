@@ -1,7 +1,10 @@
 import Foundation
 
-/// A binary search tree is a special kind of binary tree that performs insertions and deletions such that the tree is always sorted.
+/**
+ A binary search tree is a special kind of binary tree that performs insertions and deletions such that the tree is always sorted.
+*/
 public struct BinarySearchTree<T: Comparable> {
+    
     /// The root of the binary search tree.
     public private(set) var root: BinaryTreeNode<T>?
     
@@ -13,7 +16,10 @@ extension BinarySearchTree {
     
     /// Check if a value is present in the binary search tree.
     ///
+    /// - Complexity: O(log n)
+    ///
     /// - Parameter value: The value to check for.
+    ///
     /// - Returns: True if the value is in the binary search tree, false otherwise.
     public func contains(_ value: T) -> Bool {
         var current = root
@@ -32,12 +38,16 @@ extension BinarySearchTree {
     
     /// Recursively inserts an element into the binary search tree.
     ///
+    /// - Complexity: O(log n)
+    ///
     /// - Parameter value: The value of the element to insert.
     public mutating func insert(_ value: T) {
       root = insert(from: root, value: value)
     }
     
     /// Recursively inserts an element into the binary search tree.
+    ///
+    /// - Complexity: O(log n)
     ///
     /// - Parameters:
     ///     - node: The current node to traverse.
@@ -58,12 +68,16 @@ extension BinarySearchTree {
     
     /// Recursively removes an element from the binary search tree.
     ///
+    /// - Complexity: O(log n)
+    ///
     /// - Parameter value: The value of the element to remove.
     public mutating func remove(_ value: T) {
         root = remove(node: root, value: value)
     }
     
     /// Recursively removes an element from the binary search tree.
+    ///
+    /// - Complexity: O(log n)
     ///
     /// - Parameters:
     ///     - node: The current node to traverse.

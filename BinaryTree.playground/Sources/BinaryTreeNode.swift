@@ -4,6 +4,7 @@ import Foundation
  A binary tree is a tree data structure in which each node has at most two children, which are referred to as the left child and the right child.
  */
 public class BinaryTreeNode<T> {
+    
     /// The value of the node.
     public var value: T
     
@@ -33,6 +34,8 @@ public class BinaryTreeNode<T> {
 extension BinaryTreeNode {
     /// Performs an in-order traversal of the tree.
     ///
+    /// - Complexity: O(n)
+    ///
     /// - Parameter visit: Closure to execute for each node as it is visited.
     public func traverseInOrder(visit: (T) -> Void) {
         leftChild?.traverseInOrder(visit: visit)
@@ -42,6 +45,8 @@ extension BinaryTreeNode {
     
     /// Performs a pre-order traversal of the tree.
     ///
+    /// - Complexity: O(n)
+    ///
     /// - Parameter visit: Closure to execute for each node as it is visited.
     public func traversePreOrder(visit: (T) -> Void) {
         visit(value)
@@ -50,6 +55,8 @@ extension BinaryTreeNode {
     }
     
     /// Performs a post-order traversal of the tree.
+    ///
+    /// - Complexity: O(n)
     ///
     /// - Parameter visit: Closure to execute for each node as it is visited.
     public func traversePostOrder(visit: (T) -> Void) {
@@ -61,6 +68,8 @@ extension BinaryTreeNode {
 
 extension BinaryTreeNode {
     /// Returns the height of the tree. The height is the distance to the lowest leaf
+    ///
+    /// - Complexity: O(n)
     ///
     /// - Returns: The height of the tree.
     public func height() -> Int {
