@@ -8,7 +8,7 @@ public struct Queue<T> {
     /// Serves as a storage for the stack.
     private var array: [T] = []
     
-    /// Computed property that eturns true is the collection is empty.
+    /// Computed property that returns true is the collection is empty.
     public var isEmpty: Bool {
         array.isEmpty
     }
@@ -28,7 +28,7 @@ public struct Queue<T> {
     
     /// Inserts an element to the back of the collection.
     ///
-    /// - Parameter element: The element to be inserted..
+    /// - Parameter element: The element to be inserted.
     public mutating func enqueue(_ element: T) {
         array.append(element)
     }
