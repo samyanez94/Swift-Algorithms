@@ -5,28 +5,30 @@ import Foundation
  */
 public struct Queue<T> {
     
-    /// Serves as a storage for the stack.
+    /// Serves as a storage for the queue.
     private var array: [T] = []
     
-    /// Computed property that returns true is the collection is empty.
+    /// Computed property that returns true is the queue is empty.
     public var isEmpty: Bool {
         array.isEmpty
     }
     
-    /// Computed propery that returns the number of elements in the collection.
+    /// Computed propery that returns the number of elements in the queue.
     public var count: Int {
        array.count
     }
     
-    /// Computer property that returns the elements on the top of the collection.
-    public var top: T? {
-      return array.last
+    /// Computer property that returns the first element on the queue.
+    public var peek: T? {
+        array.first
     }
     
     /// Default public initializer.
     public init() {}
     
-    /// Inserts an element to the back of the collection.
+    /// Inserts an element to the back of the queue.
+    ///
+    /// - Complexity: O(1)
     ///
     /// - Parameter element: The element to be inserted.
     public mutating func enqueue(_ element: T) {
@@ -35,11 +37,10 @@ public struct Queue<T> {
     
     /// Removes the element in the front of the queue if any.
     ///
+    /// - Complexity: O(n)
+    ///
     /// - Returns: The removed element.
-    @discardableResult
-    public mutating func dequeue() -> T? {
-        guard !isEmpty else { return nil }
-        
-        return array.removeFirst()
+    @discardableResult public mutating func dequeue() -> T? {
+        isEmpty ? nil : array.removeFirst()
     }
 }

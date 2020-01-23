@@ -8,36 +8,39 @@ public struct Stack<T> {
     /// Serves as a storage for the stack.
     private var array: [T] = []
     
-    /// Computed property that eturns true is the collection is empty.
+    /// Computed property that returns true is the stack is empty.
     public var isEmpty: Bool {
         array.isEmpty
     }
     
-    /// Computed propery that returns the number of elements in the collection.
+    /// Computed propery that returns the number of elements in the stack.
     public var count: Int {
-       array.count
+        array.count
     }
     
-    /// Computer property that returns the elements on the top of the collection.
+    /// Computer property that returns the elements on the top of the stack.
     public var top: T? {
-      return array.last
+        array.last
     }
     
     /// Default public initializer.
     public init() {}
     
-    /// Adds an element to the top of the collection.
+    /// Adds an element to the top of the stack.
     ///
-    /// - Parameter element: The element to be added to the collection.
+    /// - Complexity: O(1)
+    ///
+    /// - Parameter element: The element to be added to the stack.
     public mutating func push(_ element: T) {
       array.append(element)
     }
     
-    /// Removes the element on the top of the collection.
+    /// Removes the element on the top of the stack.
+    ///
+    /// - Complexity: O(n)
     ///
     /// - Returns: The removed element.
-    @discardableResult
-    public mutating func pop() -> T? {
+    @discardableResult public mutating func pop() -> T? {
        array.popLast()
     }
 }

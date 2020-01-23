@@ -4,6 +4,7 @@ import Foundation
  A tree is a data structure of profound importance that represents hierarchical relationships between objects. A tree consists of nodes, and these nodes are linked to one another.
 */
 public class TreeNode<T> {
+    
     /// The value of the node.
     public var value: T
     
@@ -19,6 +20,8 @@ public class TreeNode<T> {
     }
     
     /// Adds a node as a child to this node in the tree.
+    ///
+    /// - Complexity: O(1)
     ///
     /// - Parameter child: The child node to be added.
     public func add(_ child: TreeNode) {
