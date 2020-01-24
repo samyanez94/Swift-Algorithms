@@ -15,9 +15,9 @@ public extension Array where Element: Comparable {
     ///
     /// - Parameter orderCriteria: Closure used to sort the array.
     mutating func bubbleSort(orderCriteria: (Element, Element) -> Bool) {
-        for i in 0..<count {
-            for j in 1..<count - i {
-                if orderCriteria(self[j], self[j - 1]) {
+        for i in stride(from: 0, to: count, by: 1) {
+            for j in stride(from: 1, to: count - i, by: 1) {
+               if orderCriteria(self[j], self[j - 1]) {
                     swapAt(j, j - 1)
                 }
             }

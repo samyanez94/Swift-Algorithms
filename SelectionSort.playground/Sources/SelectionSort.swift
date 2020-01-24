@@ -15,9 +15,9 @@ public extension Array where Element: Comparable {
     ///
     /// - Parameter orderCriteria: Closure used to sort the array.
     mutating func selectionSort(orderCriteria: (Element, Element) -> Bool) {
-        for i in 0..<count {
+        for i in stride(from: 0, to: count, by: 1) {
             var min = i
-            for j in (i + 1)..<count {
+            for j in stride(from: i + 1, to: count, by: 1) {
                 if orderCriteria(self[j], self[min]) {
                     min = j
                 }
