@@ -18,6 +18,7 @@ Most of the code in this repository has been referenced from Data Structures & A
 
 ### Search Algorithms
 
+  * [Linear search](https://github.com/samyanez94/Swift-Algorithms/blob/master/LinearSearch.playground/Sources/LinearSearch.swift)
   * [Binary search](https://github.com/samyanez94/Swift-Algorithms/blob/master/BinarySearch.playground/Sources/BinarySearch.swift)
  
 ## Author
