@@ -23,7 +23,7 @@ Most of the code in this repository has been referenced from Data Structures & A
   
   ### Sort Algorithms
   
-  * [Bubble Sort](https://github.com/samyanez94/Swift-Algorithms/blob/master/BubbleSort.playground/Sources/BubbleSortswift)
+  * [Bubble Sort](https://github.com/samyanez94/Swift-Algorithms/blob/master/BubbleSort.playground/Sources/BubbleSort.swift)
    * [Selection Sort](https://github.com/samyanez94/Swift-Algorithms/blob/master/SelectionSort.playground/Sources/SelectionSort.swift)
  
 ## Author
