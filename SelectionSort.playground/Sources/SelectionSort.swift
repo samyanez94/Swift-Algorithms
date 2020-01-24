@@ -15,14 +15,14 @@ public extension Array where Element: Comparable {
     ///
     /// - Parameter orderCriteria: Closure used to sort the array.
     mutating func selectionSort(orderCriteria: (Element, Element) -> Bool) {
-        for i in 0..<self.count {
+        for i in 0..<count {
             var min = i
-            for j in (i + 1)..<self.count {
+            for j in (i + 1)..<count {
                 if orderCriteria(self[j], self[min]) {
                     min = j
                 }
             }
-            self.swapAt(i, min)
+            swapAt(i, min)
         }
     }
 }
