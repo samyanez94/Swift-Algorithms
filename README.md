@@ -1,6 +1,6 @@
-# Swift-Algorithms
+# Swift-Algorithms 🦑
 
-Collection of personal algorithms and data structures in Swift. 🦑
+Collection of personal algorithms and data structures in Swift. 
 
 ## Data Structures
 
