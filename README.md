@@ -19,7 +19,12 @@ Most of the code in this repository has been referenced from Data Structures & A
 ### Search Algorithms
 
   * [Linear search](https://github.com/samyanez94/Swift-Algorithms/blob/master/LinearSearch.playground/Sources/LinearSearch.swift)
-  * [Binary search](https://github.com/samyanez94/Swift-Algorithms/blob/master/BinarySearch.playground/Sources/BinarySearch.swift)
+  * [Binary Search](https://github.com/samyanez94/Swift-Algorithms/blob/master/BinarySearch.playground/Sources/BinarySearch.swift)
+  
+  ### Sort Algorithms
+  
+  * [Bubble Sort](https://github.com/samyanez94/Swift-Algorithms/blob/master/BubbleSort.playground/Sources/BubbleSortswift)
+   * [Selection Sort](https://github.com/samyanez94/Swift-Algorithms/blob/master/SelectionSort.playground/Sources/SelectionSort.swift)
  
 ## Author
 
