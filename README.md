@@ -2,6 +2,8 @@
 
 Collection of personal algorithms and data structures in Swift. 
 
+Most of the code in this repository has been referenced from Data Structures & Algorithms in Swift by Kevin Lau and Vicent Ngo and from the [Swift Algorithm Club](https://github.com/raywenderlich/swift-algorithm-club).
+
 ## Data Structures
 
   * [Stack](https://github.com/samyanez94/Swift-Algorithms/blob/master/Stack.playground/Sources/Stack.swift)
