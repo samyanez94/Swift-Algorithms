@@ -28,6 +28,7 @@ Most of the code in this repository has been referenced from Data Structures & A
    * [Insertion Sort](https://github.com/samyanez94/Swift-Algorithms/blob/master/InsertionSort.playground/Sources/InsertionSort.swift)
    * [Merge Sort](https://github.com/samyanez94/Swift-Algorithms/blob/master/MergeSort.playground/Sources/MergeSort.swift)
    * [Heap Sort](https://github.com/samyanez94/Swift-Algorithms/blob/master/HeapSort.playground/Sources/HeapSort.swift)
+   * [Quicksort](https://github.com/samyanez94/Swift-Algorithms/blob/master/Quicksort.playground/Sources/Quicksort.swift)
  
 ## Author
 
