@@ -14,7 +14,7 @@ Most of the code in this repository has been referenced from Data Structures & A
   * [Heap](https://github.com/samyanez94/Swift-Algorithms/blob/master/Heap.playground/Sources/Heap.swift)
   * [Priority Queue](https://github.com/samyanez94/Swift-Algorithms/blob/master/PriorityQueue.playground/Sources/PriorityQueue.swift)
 
-## Algoritms
+## Algorithms
 
 ### Search Algorithms
 
