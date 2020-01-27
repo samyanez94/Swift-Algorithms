@@ -7,10 +7,17 @@ public extension Array where Element: Comparable {
     /// - Complexity: O(n log n)
     ///
     /// - Returns: A sorted array of the sequence's elements.
-    mutating func mergeSort() -> [Element] {
+    func mergeSort() -> [Element] {
         return mergeSort(self)
     }
     
+    /// Merge sort is a divide and conquer algorithm that was invented by John Von Neumann in 1945. Merge sort works by sorting an array, dividing it into two halves, sorting the two halves recursively, and then merging the results.
+    ///
+    /// - Complexity: O(n log n)
+    ///
+    /// - Parameter array: The array to be sorted.
+    ///
+    /// - Returns: A sorted array of the sequence's elements.
     private func mergeSort(_ array: [Element]) -> [Element] {
         // Break case for the recursive algorithm.
         guard array.count > 1 else { return array }
@@ -24,6 +31,15 @@ public extension Array where Element: Comparable {
         return merge(left: left, right: right)
     }
     
+    /// Merges two arrays and returns a sorted array as a result.
+    ///
+    /// - Complexity: O(n)
+    ///
+    /// - Parameters:
+    ///     - left: The left array to be merged.
+    ///     - right: The right array to be merged.
+    ///
+    /// - Returns: A sorted array of the two sequence's elements.
     private func merge(left: [Element], right: [Element]) -> [Element] {
         var leftIndex = 0
         var rightIndex = 0
