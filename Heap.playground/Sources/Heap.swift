@@ -40,7 +40,7 @@ public struct Heap<T: Comparable> {
     ///
     /// - Returns: The  maximum or minimum value in the heap.
     public func peek() -> T? {
-        return nodes.first
+        nodes.first
     }
     
     /// Returns the index of the parent of the element at index i.
@@ -50,7 +50,7 @@ public struct Heap<T: Comparable> {
     /// - Parameter i: The index of the element.
     ///
     /// - Returns: The index of the parent of the element.
-    internal func parentIndex(ofIndex i: Int) -> Int {
+    func parentIndex(ofIndex i: Int) -> Int {
         (i - 1) / 2
     }
     

@@ -1,6 +1,7 @@
 import Foundation
 
 extension Heap {
+    
     /// Returns a sorted array from the element in the heap.
     ///
     /// - Complexity: O(n log n)

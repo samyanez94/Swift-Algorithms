@@ -10,12 +10,12 @@ public struct PriorityQueue<T: Comparable> {
     
     /// Computed property that returns true is the queue is empty.
     public var isEmpty: Bool {
-        return heap.isEmpty
+        heap.isEmpty
     }
     
     /// Computed propery that returns the number of elements in the queue.
     public var count: Int {
-         return heap.count
+        heap.count
      }
     
     /// Public initializer
@@ -29,7 +29,7 @@ public struct PriorityQueue<T: Comparable> {
     ///
     /// - Returns: The first element in the queue.
     public func peek() -> T? {
-        return heap.peek()
+        heap.peek()
     }
     
     /// Inserts an element to the queue.
@@ -47,6 +47,6 @@ public struct PriorityQueue<T: Comparable> {
     ///
     /// - Returns: The removed element.
     public mutating func dequeue() -> T? {
-        return heap.remove()
+        heap.remove()
     }
 }

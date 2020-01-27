@@ -40,7 +40,7 @@ public struct Heap<T: Comparable> {
     ///
     /// - Returns: The  maximum or minimum value in the heap.
     public func peek() -> T? {
-        return nodes.first
+        nodes.first
     }
     
     /// Returns the index of the parent of the element at index i.
@@ -120,11 +120,11 @@ public struct Heap<T: Comparable> {
     
     /// Returns the root node from the heap. In the case of a max-heap, this is the maximum value; for a min-heap it is the minimum value.
     ///
-    /// - Parameter index: The index of the element to remove.
-    ///
     /// - Complexity: O(log n)
     ///
-    /// - Returns: The element removed.
+    /// - Parameter index: The index of the element to remove.
+    ///
+    /// - Returns: The removed element.
     @discardableResult public mutating func remove(at index: Int) -> T? {
         guard index < nodes.count else { return nil }
         let size = nodes.count - 1
