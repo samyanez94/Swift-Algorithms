@@ -1,5 +1,6 @@
 import Foundation
 
+/// Represents an edge in a graph.
 public struct Edge<T>: Equatable where T: Hashable {
     public let source: Vertex<T>
     public let destination: Vertex<T>
