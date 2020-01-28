@@ -13,6 +13,7 @@ Most of the code in this repository has been referenced from Data Structures & A
   * [Binary Search Tree](https://github.com/samyanez94/Swift-Algorithms/blob/master/BinarySearchTree.playground/Sources/BinarySearchTree.swift)
   * [Heap](https://github.com/samyanez94/Swift-Algorithms/blob/master/Heap.playground/Sources/Heap.swift)
   * [Priority Queue](https://github.com/samyanez94/Swift-Algorithms/blob/master/PriorityQueue.playground/Sources/PriorityQueue.swift)
+  * [Graph](https://github.com/samyanez94/Swift-Algorithms/blob/master/Graph.playground/Sources/Graph.swift)
 
 ## Algorithms
 
