@@ -1,0 +1,12 @@
+import Foundation
+
+public struct Vertex<T>: Equatable where T: Hashable {
+    public let index: Int
+    public let data: T
+}
+
+extension Vertex: CustomStringConvertible {
+    public var description: String {
+        return "\(index): \(data)"
+    }
+}
