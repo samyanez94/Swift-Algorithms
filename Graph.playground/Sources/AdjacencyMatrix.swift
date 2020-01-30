@@ -39,7 +39,7 @@ public class AdjacencyMatrix<T: Hashable>: Graph {
     ///     - source: The source vertex of the edge.
     ///     - destination: The destination vertex of the edge.
     ///     - weight: The weight of the edge.
-    public func addDirectedEdge(from source: Vertex<T>, to destination: Vertex<T>, weight: Double?) {
+    public func addDirectedEdge(from source: Vertex<T>, to destination: Vertex<T>, weight: Double? = nil) {
         adjacencyMatrix[source.index][destination.index] = weight
     }
     
