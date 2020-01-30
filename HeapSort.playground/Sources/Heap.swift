@@ -3,7 +3,7 @@ import Foundation
 /**
  A heap is a binary tree data structure that is sorted based on the "heap property" that determines the order of the nodes in the tree.
 */
-public struct Heap<T: Comparable> {
+public struct Heap<T: Equatable> {
     /// Serves as a storage for the heap.
     var nodes = [T]()
     

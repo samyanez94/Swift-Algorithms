@@ -3,9 +3,9 @@ import Foundation
 /**
  A heap is a binary tree data structure that is sorted based on the "heap property" that determines the order of the nodes in the tree.
 */
-public struct Heap<T: Comparable> {
+public struct Heap<T: Equatable> {
     /// Serves as a storage for the heap.
-    private var nodes = [T]()
+    var nodes = [T]()
     
     /// Determines how to compare two nodes in the heap.
     private let orderCriteria: (T, T) -> Bool
@@ -141,7 +141,7 @@ public struct Heap<T: Comparable> {
     /// - Complexity: O(log n)
     ///
     /// - Parameter index: The index of the element where the shift should start.
-    private mutating func shiftUp(from index: Int) {
+    mutating func shiftUp(from index: Int) {
         var childIndex = index
         let child = nodes[childIndex]
         var parentIndex = self.parentIndex(ofIndex: childIndex)
@@ -157,7 +157,7 @@ public struct Heap<T: Comparable> {
     /// Restores the "heap property" by recursively swapping down values.
     ///
     /// - Parameter index: The index of the element where the shift should start.
-    private mutating func shiftDown(from index: Int) {
+    mutating func shiftDown(from index: Int) {
         shiftDown(from: index, until: nodes.count)
     }
     
@@ -168,7 +168,7 @@ public struct Heap<T: Comparable> {
     /// - Parameters:
     ///     - index: The index of the element where the shift should start.
     ///     - endIndex: The index of the element where the shift should end.
-    private mutating func shiftDown(from index: Int, until endIndex: Int) {
+    mutating func shiftDown(from index: Int, until endIndex: Int) {
         let leftChildIndex = self.leftChildIndex(ofIndex: index)
         let rightChildIndex = self.rightChildIndex(ofIndex: index)
       
