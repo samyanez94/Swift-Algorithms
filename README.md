@@ -17,6 +17,11 @@ Most of the code in this repository has been referenced from Data Structures & A
 
 ## Algorithms
 
+### Graph Algorithms
+
+  * [Breadth-first Search](https://github.com/samyanez94/Swift-Algorithms/blob/master/BreadthFirstSearch.playground/Sources/BreadthFirstSearch.swift)
+  * [Depth-first Search](https://github.com/samyanez94/Swift-Algorithms/blob/master/DepthFirstSearch.playground/Sources/DepthFirstSearch.swift)
+
 ### Search Algorithms
 
   * [Linear Search](https://github.com/samyanez94/Swift-Algorithms/blob/master/LinearSearch.playground/Sources/LinearSearch.swift)
