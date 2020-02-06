@@ -21,8 +21,8 @@ Most of the code in this repository has been referenced from [Data Structures & 
 
   * [Breadth-first Search](https://github.com/samyanez94/Swift-Algorithms/blob/master/BreadthFirstSearch.playground/Sources/BreadthFirstSearch.swift)
   * [Depth-first Search](https://github.com/samyanez94/Swift-Algorithms/blob/master/DepthFirstSearch.playground/Sources/DepthFirstSearch.swift)
-  * [Dijkstra's Shortest Path](https://github.com/samyanez94/Swift-Algorithms/blob/master/Dijkstra.playground/Sources/Dijkstra.swift)
-  * [Prim's Minimal Spanning Tree](https://github.com/samyanez94/Swift-Algorithms/blob/master/Prim.playground/Sources/Prim.swift)
+  * [Dijkstra's](https://github.com/samyanez94/Swift-Algorithms/blob/master/Dijkstra.playground/Sources/Dijkstra.swift)
+  * [Prim's](https://github.com/samyanez94/Swift-Algorithms/blob/master/Prim.playground/Sources/Prim.swift)
 
 ### Search Algorithms
 
