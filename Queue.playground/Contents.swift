@@ -15,6 +15,3 @@ queue.enqueue("Leila")
 
 // Get the queue count
 queue.count
-
-
-
