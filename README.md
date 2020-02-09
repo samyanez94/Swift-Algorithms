@@ -2,7 +2,7 @@
 
 Collection of personal algorithms and data structures in Swift. 
 
-Most of the code in this repository has been referenced from Data Structures & Algorithms in Swift by Kevin Lau and Vicent Ngo and from the [Swift Algorithm Club](https://github.com/raywenderlich/swift-algorithm-club).
+Most of the code in this repository has been referenced from [Data Structures & Algorithms in Swift by Kevin Lau and Vicent Ngo](https://store.raywenderlich.com/products/data-structures-and-algorithms-in-swift) and from the [Swift Algorithm Club](https://github.com/raywenderlich/swift-algorithm-club).
 
 ## Data Structures
 
@@ -21,7 +21,8 @@ Most of the code in this repository has been referenced from Data Structures & A
 
   * [Breadth-first Search](https://github.com/samyanez94/Swift-Algorithms/blob/master/BreadthFirstSearch.playground/Sources/BreadthFirstSearch.swift)
   * [Depth-first Search](https://github.com/samyanez94/Swift-Algorithms/blob/master/DepthFirstSearch.playground/Sources/DepthFirstSearch.swift)
-  * [Dijkstra's](https://github.com/samyanez94/Swift-Algorithms/blob/master/Dijkstra.playground/Sources/Dijkstra.swift) 
+  * [Dijkstra's](https://github.com/samyanez94/Swift-Algorithms/blob/master/Dijkstra.playground/Sources/Dijkstra.swift)
+  * [Prim's](https://github.com/samyanez94/Swift-Algorithms/blob/master/Prim.playground/Sources/Prim.swift)
 
 ### Search Algorithms
 
