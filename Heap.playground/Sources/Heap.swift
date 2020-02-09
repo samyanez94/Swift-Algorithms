@@ -3,12 +3,12 @@ import Foundation
 /**
  A heap is a binary tree data structure that is sorted based on the "heap property" that determines the order of the nodes in the tree.
 */
-public struct Heap<T: Equatable> {
+public struct Heap<Element: Equatable> {
     /// Serves as a storage for the heap.
-    var nodes = [T]()
+    var nodes = [Element]()
     
     /// Determines how to compare two nodes in the heap.
-    private let orderCriteria: (T, T) -> Bool
+    private let orderCriteria: (Element, Element) -> Bool
     
     /// Computed property that returns true is the heap is empty.
     public var isEmpty: Bool {
@@ -21,12 +21,12 @@ public struct Heap<T: Equatable> {
     }
     
     /// Public initializer.
-    public init(orderCriteria: @escaping (T, T) -> Bool) {
+    public init(orderCriteria: @escaping (Element, Element) -> Bool) {
         self.orderCriteria = orderCriteria
     }
     
     /// Public initializer from array.
-    public init(from elements: [T], orderCriteria: @escaping (T, T) -> Bool) {
+    public init(from elements: [Element], orderCriteria: @escaping (Element, Element) -> Bool) {
         self.nodes = elements
         self.orderCriteria = orderCriteria
         for index in stride(from: nodes.count / 2 - 1, through: 0, by: -1) {
@@ -39,7 +39,7 @@ public struct Heap<T: Equatable> {
     /// - Complexity: O(1)
     ///
     /// - Returns: The  maximum or minimum value in the heap.
-    public func peek() -> T? {
+    public func peek() -> Element? {
         nodes.first
     }
     
@@ -83,7 +83,7 @@ public struct Heap<T: Equatable> {
     /// - Parameter node: The node to search for.
     ///
     /// - Returns: The index of the node if found
-    public func index(of node: T) -> Int? {
+    public func index(of node: Element) -> Int? {
         nodes.firstIndex(where: { $0 == node })
     }
     
@@ -91,7 +91,7 @@ public struct Heap<T: Equatable> {
     ///
     /// - Complexity: O(log n)
     ///
-    public mutating func insert(_ value: T) {
+    public mutating func insert(_ value: Element) {
         nodes.append(value)
         shiftUp(from: nodes.count - 1)
     }
@@ -101,7 +101,7 @@ public struct Heap<T: Equatable> {
     /// - Complexity: O(log n)
     ///
     /// - Returns: The root node from the heap.
-    @discardableResult public mutating func remove() -> T? {
+    @discardableResult public mutating func remove() -> Element? {
         guard !nodes.isEmpty else { return nil }
         if nodes.count == 1 {
             return nodes.removeLast()
@@ -125,7 +125,7 @@ public struct Heap<T: Equatable> {
     /// - Parameter index: The index of the element to remove.
     ///
     /// - Returns: The removed element.
-    @discardableResult public mutating func remove(at index: Int) -> T? {
+    @discardableResult public mutating func remove(at index: Int) -> Element? {
         guard index < nodes.count else { return nil }
         let size = nodes.count - 1
         if index != size {

@@ -3,10 +3,10 @@ import Foundation
 /**
  An adjacency list implementation of a graph. Adjacency lists store a list of outgoing edges for every vertex in the graph.
 */
-public class AdjacencyList<T: Hashable>: Graph {
+public class AdjacencyList<Element: Hashable>: Graph {
     
     /// The list of outgoing edges for every vertex in the graph.
-    fileprivate var adjacencyList: [EdgeList<T>] = []
+    fileprivate var adjacencyList: [EdgeList<Element>] = []
     
     public init() {}
     
@@ -17,7 +17,7 @@ public class AdjacencyList<T: Hashable>: Graph {
     /// - Parameter data: The value to be assigned to the vertex.
     ///
     /// - Returns: The vertex that was added to the graph.
-    public func createVertex(data: T) -> Vertex<T> {
+    public func createVertex(data: Element) -> Vertex<Element> {
         let vertex = Vertex(index: adjacencyList.count, data: data)
         adjacencyList.append(EdgeList(vertex: vertex))
         return vertex
@@ -31,7 +31,7 @@ public class AdjacencyList<T: Hashable>: Graph {
     ///     - source: The source vertex of the edge.
     ///     - destination: The destination vertex of the edge.
     ///     - weight: The weight of the edge.
-    public func addDirectedEdge(from source: Vertex<T>, to destination: Vertex<T>, weight: Double? = nil) {
+    public func addDirectedEdge(from source: Vertex<Element>, to destination: Vertex<Element>, weight: Double? = nil) {
         adjacencyList[source.index].add(Edge(source: source, destination: destination, weight: weight))
     }
     
@@ -42,7 +42,7 @@ public class AdjacencyList<T: Hashable>: Graph {
     /// - Parameter source: The vertex from where to get the edges from.
     ///
     /// - Returns: A list of outgoing edges.
-    public func edges(from source: Vertex<T>) -> [Edge<T>] {
+    public func edges(from source: Vertex<Element>) -> [Edge<Element>] {
         adjacencyList[source.index].edges
     }
     
@@ -55,7 +55,7 @@ public class AdjacencyList<T: Hashable>: Graph {
     ///     - destination: The destination vertex of the edge.
     ///
     /// - Returns: The weight of the edge.
-    public func weight(from source: Vertex<T>, to destination: Vertex<T>) -> Double? {
+    public func weight(from source: Vertex<Element>, to destination: Vertex<Element>) -> Double? {
         adjacencyList[source.index].edges.first(where: { $0.destination == destination })?.weight
     }
 }
@@ -78,11 +78,11 @@ extension AdjacencyList: CustomStringConvertible {
     }
 }
 
-private struct EdgeList<T> where T: Hashable {
-    var vertex: Vertex<T>
-    var edges: [Edge<T>] = []
+private struct EdgeList<Element> where Element: Hashable {
+    var vertex: Vertex<Element>
+    var edges: [Edge<Element>] = []
 
-    mutating func add(_ edge: Edge<T>) {
+    mutating func add(_ edge: Edge<Element>) {
         edges.append(edge)
     }
 }

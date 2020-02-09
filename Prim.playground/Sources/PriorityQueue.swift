@@ -3,10 +3,10 @@ import Foundation
 /**
  A priority queue is a queue where the most important element is always at the front. Priority queues are useful for algorithms that need to process a large number of items and where you repeatedly need to identify which one is now the biggest or smallest.
 */
-public struct PriorityQueue<T: Equatable> {
+public struct PriorityQueue<Element: Equatable> {
     
     /// Heap data structure to serve as a container for the queue. A heap ensures priority is maintained.
-    private var heap: Heap<T>
+    private var heap: Heap<Element>
     
     /// Computed property that returns true is the queue is empty.
     public var isEmpty: Bool {
@@ -19,7 +19,7 @@ public struct PriorityQueue<T: Equatable> {
      }
     
     /// Public initializer
-    public init(elements: [T] = [], orderCriteria: @escaping (T, T) -> Bool) {
+    public init(elements: [Element] = [], orderCriteria: @escaping (Element, Element) -> Bool) {
         heap = Heap(from: elements, orderCriteria: orderCriteria)
     }
     
@@ -28,7 +28,7 @@ public struct PriorityQueue<T: Equatable> {
     /// - Complexity: O(1)
     ///
     /// - Returns: The first element in the queue.
-    public func peek() -> T? {
+    public func peek() -> Element? {
         heap.peek()
     }
     
@@ -37,7 +37,7 @@ public struct PriorityQueue<T: Equatable> {
     /// - Complexity: O(log n)
     ///
     /// - Parameter element: The element to be inserted.
-    public mutating func enqueue(_ element: T) {
+    public mutating func enqueue(_ element: Element) {
         heap.insert(element)
     }
     
@@ -46,7 +46,7 @@ public struct PriorityQueue<T: Equatable> {
     /// - Complexity: O(log n)
     ///
     /// - Returns: The removed element.
-    public mutating func dequeue() -> T? {
+    public mutating func dequeue() -> Element? {
         heap.remove()
     }
 }

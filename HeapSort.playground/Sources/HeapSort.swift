@@ -7,7 +7,7 @@ extension Heap {
     /// - Complexity: O(n log n)
     ///
     /// - Returns: A sorted array containing the elements in the heap.
-    public mutating func sort() -> [T] {
+    public mutating func sort() -> [Element] {
         for index in stride(from: nodes.count - 1, through: 1, by: -1) {
             nodes.swapAt(0, index)
             shiftDown(from: 0, until: index)

@@ -3,10 +3,10 @@ import Foundation
 /**
  A binary search tree is a special kind of binary tree that performs insertions and deletions such that the tree is always sorted.
 */
-public struct BinarySearchTree<T: Comparable> {
+public struct BinarySearchTree<Element: Comparable> {
     
     /// The root of the binary search tree.
-    public private(set) var root: BinaryTreeNode<T>?
+    public private(set) var root: BinaryTreeNode<Element>?
     
     /// Default public initializer.
     public init() {}
@@ -21,7 +21,7 @@ extension BinarySearchTree {
     /// - Parameter value: The value to check for.
     ///
     /// - Returns: True if the value is in the binary search tree, false otherwise.
-    public func contains(_ value: T) -> Bool {
+    public func contains(_ value: Element) -> Bool {
         var current = root
         while let node = current {
             if node.value == value {
@@ -41,7 +41,7 @@ extension BinarySearchTree {
     /// - Complexity: O(log n)
     ///
     /// - Parameter value: The value of the element to insert.
-    public mutating func insert(_ value: T) {
+    public mutating func insert(_ value: Element) {
       root = insert(from: root, value: value)
     }
     
@@ -54,7 +54,7 @@ extension BinarySearchTree {
     ///     - value: The value of the element to insert.
     ///
     /// - Returns: The current node.
-    private func insert(from node: BinaryTreeNode<T>?, value: T) -> BinaryTreeNode<T> {
+    private func insert(from node: BinaryTreeNode<Element>?, value: Element) -> BinaryTreeNode<Element> {
         guard let node = node else { return BinaryTreeNode(value) }
         
         if value < node.value {
@@ -71,7 +71,7 @@ extension BinarySearchTree {
     /// - Complexity: O(log n)
     ///
     /// - Parameter value: The value of the element to remove.
-    public mutating func remove(_ value: T) {
+    public mutating func remove(_ value: Element) {
         root = remove(node: root, value: value)
     }
     
@@ -84,7 +84,7 @@ extension BinarySearchTree {
     ///     - value: The value of the element to remove
     ///
     /// - Returns: The current node.
-    private func remove(node: BinaryTreeNode<T>?, value: T) -> BinaryTreeNode<T>? {
+    private func remove(node: BinaryTreeNode<Element>?, value: Element) -> BinaryTreeNode<Element>? {
         guard let node = node else { return nil }
         if value == node.value {
             if node.leftChild == nil && node.rightChild == nil {

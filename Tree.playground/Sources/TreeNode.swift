@@ -3,19 +3,19 @@ import Foundation
 /**
  A tree is a data structure of profound importance that represents hierarchical relationships between objects. A tree consists of nodes, and these nodes are linked to one another.
 */
-public class TreeNode<T> {
+public class TreeNode<Element> {
     
     /// The value of the node.
-    public var value: T
+    public var value: Element
     
     /// The parent of the node in the tree.
     public weak private(set) var parent: TreeNode?
 
     /// The list of children nodes.
-    public var children: [TreeNode<T>] = []
+    public var children: [TreeNode<Element>] = []
     
     /// Default public initializer.
-    public init(_ value: T) {
+    public init(_ value: Element) {
         self.value = value
     }
     

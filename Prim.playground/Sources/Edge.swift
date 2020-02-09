@@ -1,9 +1,9 @@
 import Foundation
 
 /// Represents an edge in a graph.
-public struct Edge<T>: Hashable where T: Hashable {
-    public let source: Vertex<T>
-    public let destination: Vertex<T>
+public struct Edge<Element>: Hashable where Element: Hashable {
+    public let source: Vertex<Element>
+    public let destination: Vertex<Element>
     public let weight: Double?
 }
 
@@ -17,7 +17,7 @@ extension Edge: CustomStringConvertible {
 }
 
 extension Edge: Comparable {
-    public static func < (lhs: Edge<T>, rhs: Edge<T>) -> Bool {
+    public static func < (lhs: Edge<Element>, rhs: Edge<Element>) -> Bool {
         lhs.weight ?? 0.0 < rhs.weight ?? 0.0
     }
 }

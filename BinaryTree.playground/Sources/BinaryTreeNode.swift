@@ -3,10 +3,10 @@ import Foundation
 /**
  A binary tree is a tree data structure in which each node has at most two children, which are referred to as the left child and the right child.
  */
-public class BinaryTreeNode<T> {
+public class BinaryTreeNode<Element> {
     
     /// The value of the node.
-    public var value: T
+    public var value: Element
     
     /// The parent of the node in the tree.
     public weak private(set) var parent: BinaryTreeNode?
@@ -26,7 +26,7 @@ public class BinaryTreeNode<T> {
     }
     
     /// Default public initializer.
-    public init(_ value: T) {
+    public init(_ value: Element) {
         self.value = value
     }
 }
@@ -37,7 +37,7 @@ extension BinaryTreeNode {
     /// - Complexity: O(n)
     ///
     /// - Parameter visit: Closure to execute for each node as it is visited.
-    public func traverseInOrder(visit: (T) -> Void) {
+    public func traverseInOrder(visit: (Element) -> Void) {
         leftChild?.traverseInOrder(visit: visit)
         visit(value)
         rightChild?.traverseInOrder(visit: visit)
@@ -48,7 +48,7 @@ extension BinaryTreeNode {
     /// - Complexity: O(n)
     ///
     /// - Parameter visit: Closure to execute for each node as it is visited.
-    public func traversePreOrder(visit: (T) -> Void) {
+    public func traversePreOrder(visit: (Element) -> Void) {
         visit(value)
         leftChild?.traverseInOrder(visit: visit)
         rightChild?.traverseInOrder(visit: visit)
@@ -59,7 +59,7 @@ extension BinaryTreeNode {
     /// - Complexity: O(n)
     ///
     /// - Parameter visit: Closure to execute for each node as it is visited.
-    public func traversePostOrder(visit: (T) -> Void) {
+    public func traversePostOrder(visit: (Element) -> Void) {
         leftChild?.traverseInOrder(visit: visit)
         rightChild?.traverseInOrder(visit: visit)
         visit(value)

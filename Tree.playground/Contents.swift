@@ -29,7 +29,7 @@ eddard.add(rickon)
 // Creat Jon Snow
 let jon = TreeNode("Jon Snow")
 
-// Add Jon Snow
+// Add Jon Snow (Sorry, for the spoliers)
 lyanna.add(jon)
 
 // Print the tree

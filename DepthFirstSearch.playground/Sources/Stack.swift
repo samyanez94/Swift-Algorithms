@@ -1,12 +1,23 @@
 import Foundation
 
+public protocol Stackable {
+    associatedtype Element
+    
+    var isEmpty: Bool { get }
+    var count: Int { get }
+    var peek: Element? { get }
+    
+    mutating func push(_ element: Element)
+    mutating func pop() -> Element?
+}
+
 /**
- A stack is a linear collection whose elements are added and removed from the same end (LIFO). Said in another way, the elements of a stack are removed in the reverse order of their placement on it.
- */
-public struct Stack<T> {
+A stack is a linear collection whose elements are added and removed from the same end (LIFO). Said in another way, the elements of a stack are removed in the reverse order of their placement on it.
+*/
+public struct Stack<Element>: Stackable {
     
     /// Serves as a storage for the stack.
-    private var array: [T] = []
+    private var array: [Element] = []
     
     /// Computed property that returns true is the stack is empty.
     public var isEmpty: Bool {
@@ -19,7 +30,7 @@ public struct Stack<T> {
     }
     
     /// Computer property that returns the elements on the top of the stack.
-    public var top: T? {
+    public var peek: Element? {
         array.last
     }
     
@@ -31,7 +42,7 @@ public struct Stack<T> {
     /// - Complexity: O(1)
     ///
     /// - Parameter element: The element to be added to the stack.
-    public mutating func push(_ element: T) {
+    public mutating func push(_ element: Element) {
       array.append(element)
     }
     
@@ -40,7 +51,7 @@ public struct Stack<T> {
     /// - Complexity: O(1)
     ///
     /// - Returns: The removed element.
-    @discardableResult public mutating func pop() -> T? {
+    @discardableResult public mutating func pop() -> Element? {
        array.popLast()
     }
 }

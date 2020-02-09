@@ -1,12 +1,23 @@
 import Foundation
 
+public protocol Queueable {
+    associatedtype Element
+    
+    var isEmpty: Bool { get }
+    var count: Int { get }
+    var peek: Element? { get }
+    
+    mutating func enqueue(_ element: Element)
+    mutating func dequeue() -> Element?
+}
+
 /**
  A queue is a linear collection whose elements are added on one end and removed from the other. Therefore, we say that queue elements are processed in a first in, first out (FIFO) manner. Elements are removed from a queue in the same order in which they are placed on the queue.
  */
-public struct Queue<T> {
+public struct Queue<Element>: Queueable {
     
     /// Serves as a storage for the queue.
-    private var array: [T] = []
+    private var array: [Element] = []
     
     /// Computed property that returns true is the queue is empty.
     public var isEmpty: Bool {
@@ -19,7 +30,7 @@ public struct Queue<T> {
     }
     
     /// Computer property that returns the first element on the queue.
-    public var peek: T? {
+    public var peek: Element? {
         array.first
     }
     
@@ -31,7 +42,7 @@ public struct Queue<T> {
     /// - Complexity: O(1)
     ///
     /// - Parameter element: The element to be inserted.
-    public mutating func enqueue(_ element: T) {
+    public mutating func enqueue(_ element: Element) {
         array.append(element)
     }
     
@@ -40,7 +51,7 @@ public struct Queue<T> {
     /// - Complexity: O(n)
     ///
     /// - Returns: The removed element.
-    @discardableResult public mutating func dequeue() -> T? {
+    @discardableResult public mutating func dequeue() -> Element? {
         isEmpty ? nil : array.removeFirst()
     }
 }

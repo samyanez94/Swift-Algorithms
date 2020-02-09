@@ -3,10 +3,10 @@ import Foundation
 /**
  An adjacency matrix implementation of a graph. Adjacency matrixes use a square matrix to represent a graph.
 */
-public class AdjacencyMatrix<T: Hashable>: Graph {
+public class AdjacencyMatrix<Element: Hashable>: Graph {
     
     /// List of vertices
-    private var vertices: [Vertex<T>] = []
+    private var vertices: [Vertex<Element>] = []
     
     /// Square matrix to represent a graph
     private var adjacencyMatrix: [[Double?]] = []
@@ -20,7 +20,7 @@ public class AdjacencyMatrix<T: Hashable>: Graph {
     /// - Parameter data: The value to be assigned to the vertex.
     ///
     /// - Returns: The vertex that was added to the graph.
-    public func createVertex(data: T) -> Vertex<T> {
+    public func createVertex(data: Element) -> Vertex<Element> {
         let vertex = Vertex(index: adjacencyMatrix.count, data: data)
         for i in stride(from: 0, to: adjacencyMatrix.count, by: 1) {
           adjacencyMatrix[i].append(nil)
@@ -39,7 +39,7 @@ public class AdjacencyMatrix<T: Hashable>: Graph {
     ///     - source: The source vertex of the edge.
     ///     - destination: The destination vertex of the edge.
     ///     - weight: The weight of the edge.
-    public func addDirectedEdge(from source: Vertex<T>, to destination: Vertex<T>, weight: Double? = nil) {
+    public func addDirectedEdge(from source: Vertex<Element>, to destination: Vertex<Element>, weight: Double? = nil) {
         adjacencyMatrix[source.index][destination.index] = weight
     }
     
@@ -50,8 +50,8 @@ public class AdjacencyMatrix<T: Hashable>: Graph {
     /// - Parameter source: The vertex from where to get the edges from.
     ///
     /// - Returns: A list of outgoing edges.
-    public func edges(from source: Vertex<T>) -> [Edge<T>] {
-        var edges: [Edge<T>] = []
+    public func edges(from source: Vertex<Element>) -> [Edge<Element>] {
+        var edges: [Edge<Element>] = []
         for index in stride(from: 0, to: adjacencyMatrix.count, by: 1) {
             if let weight = adjacencyMatrix[source.index][index] {
                 edges.append(Edge(source: source, destination: vertices[index], weight: weight))
@@ -69,7 +69,7 @@ public class AdjacencyMatrix<T: Hashable>: Graph {
     ///     - destination: The destination vertex of the edge.
     ///
     /// - Returns: The weight of the edge.
-    public func weight(from source: Vertex<T>, to destination: Vertex<T>) -> Double? {
+    public func weight(from source: Vertex<Element>, to destination: Vertex<Element>) -> Double? {
         adjacencyMatrix[source.index][destination.index]
     }
 }
