@@ -6,7 +6,7 @@ public extension RandomAccessCollection where Element: Comparable {
     ///
     /// - Complexity: O(log n)
     ///
-    /// -   Parameters:
+    /// - Parameters:
     ///     - value: The value to be search for in the collection.
     ///     - range: The range to search in the collection.
     ///
